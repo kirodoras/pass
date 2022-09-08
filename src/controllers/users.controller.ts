@@ -8,3 +8,10 @@ export async function signUp(req: Request, res: Response) {
   await usersServices.signUp(user);
   res.sendStatus(200);
 }
+
+export async function signIn(req: Request, res: Response) {
+  const { email, password } = req.body;
+  const user: usersTypes.User = { email, password };
+  const token = await usersServices.signIn(user);
+  res.send({ token });
+}
