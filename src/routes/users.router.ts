@@ -12,4 +12,10 @@ UsersRouter.post(
   usersController.signUp
 );
 
+UsersRouter.post(
+  `${PATH}/signin`,
+  schemaValidator.body(usersSchema),
+  usersController.signIn
+);
+
 export default UsersRouter;
