@@ -13,6 +13,7 @@ NotesRouter.post(
   notesController.create
 );
 NotesRouter.get(`${PATH}/search/:id`, notesController.findById);
+NotesRouter.get(`${PATH}/search`, notesController.findAll);
 NotesRouter.delete(`${PATH}/delete/:id`, notesController.deleteById);
 
 export default NotesRouter;
