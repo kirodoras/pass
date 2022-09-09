@@ -17,6 +17,12 @@ export async function findById(req: Request, res: Response) {
   res.send(note);
 }
 
+export async function findAll(req: Request, res: Response) {
+  const user_id = res.locals.user_id;
+  const notes = await notesServices.findAll(Number(user_id));
+  res.send(notes);
+}
+
 export async function deleteById(req: Request, res: Response) {
   const id = parseInt(req.params.id);
   const user_id = res.locals.user_id;
