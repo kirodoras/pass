@@ -8,9 +8,20 @@ export async function create(noteObj: notesTypes.Note) {
   console.log(noteObj);
 }
 
-export async function checkNoteExistsByTittleAndUserId(tittle: string, user_id: number) {
+export async function checkNoteExistsByTittleAndUserId(
+  tittle: string,
+  user_id: number
+) {
   const note = await notesRepository.findByTittleAndUserId(tittle, user_id);
   if (note) {
     throw { type: "conflict", message: "This note tittle already exists" };
   }
+}
+
+export async function findById(id: number) {
+  const note = await notesRepository.findById(id);
+  if (!note) {
+    throw { type: "not_found", message: "Note not found" };
+  }
+  return note;
 }
