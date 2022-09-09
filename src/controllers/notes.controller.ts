@@ -16,3 +16,10 @@ export async function findById(req: Request, res: Response) {
   const note = await notesServices.findById(id, user_id);
   res.send(note);
 }
+
+export async function deleteById(req: Request, res: Response) {
+  const id = parseInt(req.params.id);
+  const user_id = res.locals.user_id;
+  await notesServices.deleteById(id, user_id);
+  res.sendStatus(200);
+}
