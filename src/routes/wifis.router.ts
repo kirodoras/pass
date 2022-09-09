@@ -13,5 +13,6 @@ WifisRouter.post(
   wifisController.create
 );
 WifisRouter.get(`${PATH}/search/:id`, wifisController.findById);
+WifisRouter.get(`${PATH}/search`, wifisController.findAll);
 
 export default WifisRouter;
