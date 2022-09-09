@@ -22,3 +22,9 @@ export async function findById(req: Request, res: Response) {
   const wifi = await wifisServices.findById(Number(id), Number(user_id));
   res.send(wifi);
 }
+
+export async function findAll(req: Request, res: Response) {
+  const user_id = res.locals.user_id;
+  const wifis = await wifisServices.findAll(Number(user_id));
+  res.send(wifis);
+}
