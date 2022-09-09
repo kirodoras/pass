@@ -26,6 +26,11 @@ export async function findById(id: number, user_id: number) {
   return note;
 }
 
+export async function findAll(user_id: number) {
+  const notes = await notesRepository.findAll(user_id);
+  return notes;
+}
+
 export async function deleteById(id: number, user_id: number) {
   const note = await notesRepository.findById(id, user_id);
   if (!note) {
