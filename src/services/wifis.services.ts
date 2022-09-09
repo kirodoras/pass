@@ -18,3 +18,12 @@ export async function findById(id: number, user_id: number) {
   wifi.network_password = decrypted_password;
   return wifi;
 }
+
+export async function findAll(user_id: number) {
+  const wifis = await wifisRepository.findAll(user_id);
+  const result = wifis.map((wifi) => {
+    wifi.network_password = cryptrProvider.decrypt(wifi.network_password);
+    return wifi;
+  });
+  return result;
+}
