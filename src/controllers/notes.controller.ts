@@ -9,3 +9,9 @@ export async function create(req: Request, res: Response) {
   await notesServices.create(noteObj);
   res.sendStatus(201);
 }
+
+export async function findById(req: Request, res: Response) {
+  const id = parseInt(req.params.id);
+  const note = await notesServices.findById(id);
+  res.send(note);
+}
