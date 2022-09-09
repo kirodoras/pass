@@ -8,11 +8,12 @@ datasource db {
 }
 
 model Users {
-  id       Int     @id @default(autoincrement())
-  email    String  @unique
-  password String
-  Notes    Notes[]
-  Wifis    Wifis[]
+  id          Int           @id @default(autoincrement())
+  email       String        @unique
+  password    String
+  Notes       Notes[]
+  Wifis       Wifis[]
+  Credentials Credentials[]
 }
 
 model Notes {
@@ -30,4 +31,14 @@ model Wifis {
   network_password String
   tittle           String
   Users            Users  @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Credentials {
+  id           Int    @id @default(autoincrement())
+  user_id      Int
+  url          String
+  url_user     String
+  url_password String
+  tittle       String
+  Users        Users  @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }
