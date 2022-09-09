@@ -25,3 +25,12 @@ export async function findById(id: number, user_id: number) {
   }
   return note;
 }
+
+export async function deleteById(id: number, user_id: number) {
+  const note = await notesRepository.findById(id, user_id);
+  if (!note) {
+    throw { type: "not_found", message: "Note not found" };
+  }
+  const { id: note_id } = note;
+  await notesRepository.deleteById(id);
+}
