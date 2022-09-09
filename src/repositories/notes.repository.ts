@@ -12,7 +12,16 @@ export async function findByTittleAndUserId(tittle: string, user_id: number) {
   const result = await client.notes.findFirst({
     where: {
       tittle,
-      user_id
+      user_id,
+    },
+  });
+  return result;
+}
+
+export async function findById(id: number) {
+  const result = await client.notes.findFirst({
+    where: {
+      id,
     },
   });
   return result;
