@@ -12,5 +12,6 @@ WifisRouter.post(
   schemaValidator.body(wifisSchema),
   wifisController.create
 );
+WifisRouter.get(`${PATH}/search/:id`, wifisController.findById);
 
 export default WifisRouter;
