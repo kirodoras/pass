@@ -27,3 +27,12 @@ export async function findAll(user_id: number) {
   });
   return result;
 }
+
+export async function deleteById(id: number, user_id: number) {
+  const wifi = await wifisRepository.findById(id, user_id);
+  if (!wifi) {
+    throw { type: "not_found", message: "Wifi not found" };
+  }
+  const { id: wifi_id } = wifi;
+  await wifisRepository.deleteById(wifi_id);
+}

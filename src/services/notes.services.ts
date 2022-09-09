@@ -32,5 +32,5 @@ export async function deleteById(id: number, user_id: number) {
     throw { type: "not_found", message: "Note not found" };
   }
   const { id: note_id } = note;
-  await notesRepository.deleteById(id);
+  await notesRepository.deleteById(note_id);
 }
