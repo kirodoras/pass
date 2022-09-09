@@ -15,3 +15,10 @@ export async function create(req: Request, res: Response) {
   await wifisServices.create(wifi);
   res.sendStatus(201);
 }
+
+export async function findById(req: Request, res: Response) {
+  const { id } = req.params;
+  const user_id = res.locals.user_id;
+  const wifi = await wifisServices.findById(Number(id), Number(user_id));
+  res.send(wifi);
+}
