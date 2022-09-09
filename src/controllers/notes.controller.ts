@@ -12,6 +12,7 @@ export async function create(req: Request, res: Response) {
 
 export async function findById(req: Request, res: Response) {
   const id = parseInt(req.params.id);
-  const note = await notesServices.findById(id);
+  const user_id = res.locals.user_id;
+  const note = await notesServices.findById(id, user_id);
   res.send(note);
 }

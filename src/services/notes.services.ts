@@ -18,8 +18,8 @@ export async function checkNoteExistsByTittleAndUserId(
   }
 }
 
-export async function findById(id: number) {
-  const note = await notesRepository.findById(id);
+export async function findById(id: number, user_id: number) {
+  const note = await notesRepository.findById(id, user_id);
   if (!note) {
     throw { type: "not_found", message: "Note not found" };
   }

@@ -28,7 +28,8 @@ export async function tokenValidator(
   }
 
   const user = await usersServices.checkUserNotExists(email);
-  res.locals.user_id = +user.id;
+  const user_id: number = +user.id;
+  res.locals.user_id = user_id;
 
   next();
 }

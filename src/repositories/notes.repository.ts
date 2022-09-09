@@ -18,10 +18,11 @@ export async function findByTittleAndUserId(tittle: string, user_id: number) {
   return result;
 }
 
-export async function findById(id: number) {
+export async function findById(id: number, user_id: number) {
   const result = await client.notes.findFirst({
     where: {
       id,
+      user_id,
     },
   });
   return result;
