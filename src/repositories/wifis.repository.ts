@@ -7,3 +7,13 @@ export async function insert(wifi: wifisTypes.Wifi) {
   });
   return result;
 }
+
+export async function findById(id: number, user_id: number) {
+  const result = await client.wifis.findFirst({
+    where: {
+      id,
+      user_id,
+    },
+  });
+  return result;
+}
