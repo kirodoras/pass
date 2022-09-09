@@ -14,5 +14,6 @@ WifisRouter.post(
 );
 WifisRouter.get(`${PATH}/search/:id`, wifisController.findById);
 WifisRouter.get(`${PATH}/search`, wifisController.findAll);
+WifisRouter.delete(`${PATH}/delete/:id`, wifisController.deleteById);
 
 export default WifisRouter;
