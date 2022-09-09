@@ -27,3 +27,12 @@ export async function findById(id: number, user_id: number) {
   });
   return result;
 }
+
+export async function deleteById(id: number) {
+  const result = await client.notes.delete({
+    where: {
+      id,
+    },
+  });
+  return result;
+}
