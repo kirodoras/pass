@@ -28,3 +28,10 @@ export async function findAll(req: Request, res: Response) {
   const wifis = await wifisServices.findAll(Number(user_id));
   res.send(wifis);
 }
+
+export async function deleteById(req: Request, res: Response) {
+  const { id } = req.params;
+  const user_id = res.locals.user_id;
+  await wifisServices.deleteById(Number(id), Number(user_id));
+  res.sendStatus(200);
+}
