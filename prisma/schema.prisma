@@ -14,6 +14,7 @@ model Users {
   Notes       Notes[]
   Wifis       Wifis[]
   Credentials Credentials[]
+  Cards       Cards[]
 }
 
 model Notes {
@@ -41,4 +42,24 @@ model Credentials {
   url_password String
   tittle       String
   Users        Users  @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Cards {
+  id              Int            @id @default(autoincrement())
+  user_id         Int
+  card_number     String
+  card_name       String
+  card_cvv        String
+  card_expirate   String
+  card_password   String
+  card_is_virtual Boolean
+  card_type       enum_card_type @default(BOTH)
+  tittle          String
+  Users           Users          @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+enum enum_card_type {
+  CREDIT
+  DEBIT
+  BOTH
 }
