@@ -1,0 +1,19 @@
+import client from "../database";
+import * as cardsTypes from "../types/cards.types";
+
+export async function create(card: cardsTypes.Card) {
+  const result = await client.cards.create({
+    data: card,
+  });
+  return result;
+}
+
+export async function findByTittleAndUserId(tittle: string, user_id: number) {
+  const result = await client.cards.findFirst({
+    where: {
+      tittle,
+      user_id,
+    },
+  });
+  return result;
+}
