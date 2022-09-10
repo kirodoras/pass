@@ -8,3 +8,10 @@ export async function create(req: Request, res: Response) {
   await cardsServices.create(card);
   res.sendStatus(201);
 }
+
+export async function findById(req: Request, res: Response) {
+  const { id } = req.params;
+  const user_id = res.locals.user_id;
+  const card = await cardsServices.findById(Number(id), user_id);
+  res.send(card);
+}
