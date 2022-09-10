@@ -24,3 +24,15 @@ export async function checkCardExistsByTittleAndUserId(
     };
   }
 }
+
+export async function findById(id: number, user_id: number) {
+  const card = await cardsRepository.findById(id, user_id);
+  if (!card) {
+    throw { type: "not_found", message: "Card not found" };
+  }
+  const decrypted_cvv = cryptrProvider.decrypt(card.card_cvv);
+  const decrypted_password = cryptrProvider.decrypt(card.card_password);
+  card.card_cvv = decrypted_cvv;
+  card.card_password = decrypted_password;
+  return card;
+}
