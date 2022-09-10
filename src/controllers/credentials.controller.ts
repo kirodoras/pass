@@ -15,3 +15,10 @@ export async function create(req: Request, res: Response) {
   await credentialsService.create(credential);
   res.sendStatus(201);
 }
+
+export async function findById(req: Request, res: Response) {
+  const { id } = req.params;
+  const user_id = res.locals.user_id;
+  const credential = await credentialsService.findById(Number(id), user_id);
+  res.send(credential);
+}

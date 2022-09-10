@@ -12,5 +12,6 @@ CredentialsRouter.post(
   schemaValidator.body(credentialsSchema),
   credentialsController.create
 );
+CredentialsRouter.get(`${PATH}/search/:id`, credentialsController.findById);
 
 export default CredentialsRouter;

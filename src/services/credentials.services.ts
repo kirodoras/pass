@@ -26,3 +26,13 @@ export async function checkCredentialExistsByTittleAndUserId(
     };
   }
 }
+
+export async function findById(id: number, user_id: number) {
+  const credential = await credentialsRepository.findById(id, user_id);
+  if (!credential) {
+    throw { type: "not_found", message: "Credential not found" };
+  }
+  const decrypted_password = cryptrProvider.decrypt(credential.url_password);
+  credential.url_password = decrypted_password;
+  return credential;
+}
