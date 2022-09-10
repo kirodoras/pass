@@ -36,3 +36,12 @@ export async function findById(id: number, user_id: number) {
   credential.url_password = decrypted_password;
   return credential;
 }
+
+export async function findAll(user_id: number) {
+  const credentials = await credentialsRepository.findAll(user_id);
+  const result = credentials.map((credential) => {
+    credential.url_password = cryptrProvider.decrypt(credential.url_password);
+    return credential;
+  });
+  return result;
+}

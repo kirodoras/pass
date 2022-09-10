@@ -22,3 +22,9 @@ export async function findById(req: Request, res: Response) {
   const credential = await credentialsService.findById(Number(id), user_id);
   res.send(credential);
 }
+
+export async function findAll(req: Request, res: Response) {
+  const user_id = res.locals.user_id;
+  const credentials = await credentialsService.findAll(user_id);
+  res.send(credentials);
+}

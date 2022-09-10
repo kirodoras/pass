@@ -13,5 +13,6 @@ CredentialsRouter.post(
   credentialsController.create
 );
 CredentialsRouter.get(`${PATH}/search/:id`, credentialsController.findById);
+CredentialsRouter.get(`${PATH}/search`, credentialsController.findAll);
 
 export default CredentialsRouter;
