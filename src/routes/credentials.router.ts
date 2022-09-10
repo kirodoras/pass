@@ -14,5 +14,9 @@ CredentialsRouter.post(
 );
 CredentialsRouter.get(`${PATH}/search/:id`, credentialsController.findById);
 CredentialsRouter.get(`${PATH}/search`, credentialsController.findAll);
+CredentialsRouter.delete(
+  `${PATH}/delete/:id`,
+  credentialsController.deleteById
+);
 
 export default CredentialsRouter;

@@ -45,3 +45,12 @@ export async function findAll(user_id: number) {
   });
   return result;
 }
+
+export async function deleteById(id: number, user_id: number) {
+  const credential = await credentialsRepository.findById(id, user_id);
+  if (!credential) {
+    throw { type: "not_found", message: "Credential not found" };
+  }
+  const { id: credential_id } = credential;
+  await credentialsRepository.deleteById(credential_id);
+}

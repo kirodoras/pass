@@ -28,3 +28,10 @@ export async function findAll(req: Request, res: Response) {
   const credentials = await credentialsService.findAll(user_id);
   res.send(credentials);
 }
+
+export async function deleteById(req: Request, res: Response) {
+  const { id } = req.params;
+  const user_id = res.locals.user_id;
+  await credentialsService.deleteById(Number(id), user_id);
+  res.sendStatus(204);
+}
