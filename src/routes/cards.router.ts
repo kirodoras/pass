@@ -12,5 +12,6 @@ CardsRouter.post(
   schemaValidator.body(cardsSchema),
   cardsController.create
 );
+CardsRouter.get(`${PATH}/search/:id`, cardsController.findById);
 
 export default CardsRouter;
