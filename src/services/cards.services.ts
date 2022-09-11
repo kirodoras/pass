@@ -36,3 +36,13 @@ export async function findById(id: number, user_id: number) {
   card.card_password = decrypted_password;
   return card;
 }
+
+export async function findAll(user_id: number) {
+  const cards = await cardsRepository.findAll(user_id);
+  const result = cards.map((card) => {
+    card.card_cvv = cryptrProvider.decrypt(card.card_cvv);
+    card.card_password = cryptrProvider.decrypt(card.card_password);
+    return card;
+  });
+  return result;
+}
