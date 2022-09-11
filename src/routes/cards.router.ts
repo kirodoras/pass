@@ -13,5 +13,6 @@ CardsRouter.post(
   cardsController.create
 );
 CardsRouter.get(`${PATH}/search/:id`, cardsController.findById);
+CardsRouter.get(`${PATH}/search`, cardsController.findAll);
 
 export default CardsRouter;
