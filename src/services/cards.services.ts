@@ -46,3 +46,12 @@ export async function findAll(user_id: number) {
   });
   return result;
 }
+
+export async function deleteById(id: number, user_id: number) {
+  const card = await cardsRepository.findById(id, user_id);
+  if (!card) {
+    throw { type: "not_found", message: "Card not found" };
+  }
+  const { id: card_id } = card;
+  await cardsRepository.deleteById(card_id);
+}
