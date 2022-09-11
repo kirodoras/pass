@@ -4,8 +4,12 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const JWT_SECRET: string = process.env.JWT_SECRET || "secret";
-const JWT_EXPIRES_IN: string = "2h";
-export function encode(payload: any) {
+const JWT_EXPIRES_IN = "2h";
+interface EncodePayload {
+  email: string;
+}
+
+export function encode(payload: EncodePayload) {
   return jwt.sign(payload, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
 }
 
