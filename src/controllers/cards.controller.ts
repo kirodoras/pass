@@ -21,3 +21,10 @@ export async function findAll(req: Request, res: Response) {
   const cards = await cardsServices.findAll(user_id);
   res.send(cards);
 }
+
+export async function deleteById(req: Request, res: Response) {
+  const { id } = req.params;
+  const user_id = res.locals.user_id;
+  await cardsServices.deleteById(Number(id), user_id);
+  res.sendStatus(204);
+}
