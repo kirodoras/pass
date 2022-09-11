@@ -2,7 +2,7 @@ import * as notesRepository from "../repositories/notes.repository";
 import * as notesTypes from "../types/notes.types";
 
 export async function create(noteObj: notesTypes.Note) {
-  const { tittle, note, user_id } = noteObj;
+  const { tittle, user_id } = noteObj;
   await checkNoteExistsByTittleAndUserId(tittle, user_id);
   await notesRepository.insert(noteObj);
   console.log(noteObj);
