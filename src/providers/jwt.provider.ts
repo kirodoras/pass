@@ -1,4 +1,4 @@
-import jwt from "jsonwebtoken";
+import jwt, { JwtPayload } from "jsonwebtoken";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -10,5 +10,12 @@ export function encode(payload: any) {
 }
 
 export function decode(token: string) {
-  return jwt.verify(token, JWT_SECRET);
+  let payload: JwtPayload | string | undefined;
+  jwt.verify(token, JWT_SECRET, (err, decoded) => {
+    if (err) {
+      throw { type: "unauthorized", message: "Invalid token" };
+    }
+    payload = decoded;
+  });
+  return payload;
 }
