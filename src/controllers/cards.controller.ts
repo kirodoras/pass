@@ -15,3 +15,9 @@ export async function findById(req: Request, res: Response) {
   const card = await cardsServices.findById(Number(id), user_id);
   res.send(card);
 }
+
+export async function findAll(req: Request, res: Response) {
+  const user_id = res.locals.user_id;
+  const cards = await cardsServices.findAll(user_id);
+  res.send(cards);
+}
