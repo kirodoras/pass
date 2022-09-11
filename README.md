@@ -123,8 +123,8 @@ You can now access the API's endpoints by navigating to `http://localhost:5008/`
 POST users/signup
     - headers: {}
     - body:{
-	    "email": "test0@test.com",
-	    "password": "0123456789"	
+      "email": "test0@test.com",
+      "password": "0123456789"	
     }
 ```
 ## Sign In
@@ -132,8 +132,8 @@ POST users/signup
 POST users/signin
     - headers: {}
     - body:{
-	    "email": "test0@test.com",
-	    "password": "0123456789"	
+      "email": "test0@test.com",
+      "password": "0123456789"	
     }
 ```
 
