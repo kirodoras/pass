@@ -14,5 +14,6 @@ CardsRouter.post(
 );
 CardsRouter.get(`${PATH}/search/:id`, cardsController.findById);
 CardsRouter.get(`${PATH}/search`, cardsController.findAll);
+CardsRouter.delete(`${PATH}/delete/:id`, cardsController.deleteById);
 
 export default CardsRouter;
