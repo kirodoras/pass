@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import * as notesServices from "../services/notes.services";
-import * as notesTypes from "../types/notes.types";
+import * as notesServices from "../services/notesServices";
+import * as notesTypes from "../types/notesTypes";
 
 export async function create(req: Request, res: Response) {
   const { tittle, note } = req.body;

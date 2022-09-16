@@ -1,6 +1,6 @@
-import * as credentialsRepository from "../repositories/credentials.repository";
-import * as cryptrProvider from "../providers/cryptr.provider";
-import * as credentialsTypes from "../types/credentials.types";
+import * as credentialsRepository from "../repositories/credentialsRepository";
+import * as cryptrProvider from "../providers/cryptrProvider";
+import * as credentialsTypes from "../types/credentialsTypes";
 
 export async function create(credential: credentialsTypes.Credential) {
   const { user_id, url_password, tittle } = credential;

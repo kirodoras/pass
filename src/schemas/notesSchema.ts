@@ -1,5 +1,5 @@
 import joi from "joi";
-import * as notesTypes from "../types/notes.types";
+import * as notesTypes from "../types/notesTypes";
 
 const notesSchema = joi.object<notesTypes.Note>({
   note: joi.string().max(1000).required(),

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import * as cardsServices from "../services/cards.services";
-import * as cardsTypes from "../types/cards.types";
+import * as cardsServices from "../services/cardsServices";
+import * as cardsTypes from "../types/cardsTypes";
 
 export async function create(req: Request, res: Response) {
   const card: cardsTypes.Card = req.body;

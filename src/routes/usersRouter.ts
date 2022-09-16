@@ -1,7 +1,7 @@
 import { Router } from "express";
-import * as usersController from "../controllers/users.controller";
-import * as schemaValidator from "../middlewares/schemaValidator.middleware";
-import usersSchema from "../schemas/users.schema";
+import * as usersController from "../controllers/usersController";
+import * as schemaValidator from "../middlewares/schemaValidatorMiddleware";
+import usersSchema from "../schemas/usersSchema";
 
 const UsersRouter = Router();
 const PATH = "/users";

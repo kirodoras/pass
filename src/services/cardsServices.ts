@@ -1,6 +1,6 @@
-import * as cardsRepository from "../repositories/cards.repository";
-import * as cardsTypes from "../types/cards.types";
-import * as cryptrProvider from "../providers/cryptr.provider";
+import * as cardsRepository from "../repositories/cardsRepository";
+import * as cardsTypes from "../types/cardsTypes";
+import * as cryptrProvider from "../providers/cryptrProvider";
 
 export async function create(card: cardsTypes.Card) {
   const { card_cvv, card_password } = card;

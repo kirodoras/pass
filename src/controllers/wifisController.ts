@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import * as wifisServices from "../services/wifis.services";
-import * as wifisTypes from "../types/wifis.types";
+import * as wifisServices from "../services/wifisServices";
+import * as wifisTypes from "../types/wifisTypes";
 
 export async function create(req: Request, res: Response) {
   const { network_name, network_password, tittle } = req.body;

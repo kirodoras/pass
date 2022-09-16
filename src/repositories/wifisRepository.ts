@@ -1,5 +1,5 @@
 import client from "../database";
-import * as wifisTypes from "../types/wifis.types";
+import * as wifisTypes from "../types/wifisTypes";
 
 export async function insert(wifi: wifisTypes.Wifi) {
   const result = await client.wifis.create({

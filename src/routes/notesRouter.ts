@@ -1,8 +1,8 @@
 import { Router } from "express";
-import * as notesController from "../controllers/notes.controller";
-import * as schemaValidator from "../middlewares/schemaValidator.middleware";
-import notesSchema from "../schemas/notes.schema";
-import { tokenValidator } from "../middlewares/tokenValidator.middleware";
+import * as notesController from "../controllers/notesController";
+import * as schemaValidator from "../middlewares/schemaValidatorMiddleware";
+import notesSchema from "../schemas/notesSchema";
+import { tokenValidator } from "../middlewares/tokenValidatorMiddleware";
 const NotesRouter = Router();
 const PATH = "/notes";
 

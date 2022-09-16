@@ -1,5 +1,5 @@
 import joi from "joi";
-import * as cardsTypes from "../types/cards.types";
+import * as cardsTypes from "../types/cardsTypes";
 
 const cardsSchema = joi.object<cardsTypes.Cards>({
   card_number: joi.string().required(),

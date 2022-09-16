@@ -1,5 +1,5 @@
-import * as notesRepository from "../repositories/notes.repository";
-import * as notesTypes from "../types/notes.types";
+import * as notesRepository from "../repositories/notesRepository";
+import * as notesTypes from "../types/notesTypes";
 
 export async function create(noteObj: notesTypes.Note) {
   const { tittle, user_id } = noteObj;

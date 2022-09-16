@@ -1,8 +1,8 @@
 import { Router } from "express";
-import * as cardsController from "../controllers/cards.controller";
-import * as schemaValidator from "../middlewares/schemaValidator.middleware";
-import cardsSchema from "../schemas/cards.schema";
-import { tokenValidator } from "../middlewares/tokenValidator.middleware";
+import * as cardsController from "../controllers/cardsController";
+import * as schemaValidator from "../middlewares/schemaValidatorMiddleware";
+import cardsSchema from "../schemas/cardsSchema";
+import { tokenValidator } from "../middlewares/tokenValidatorMiddleware";
 const CardsRouter = Router();
 const PATH = "/cards";
 

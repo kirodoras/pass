@@ -1,15 +1,15 @@
 import client from "../database";
-import * as cardsTypes from "../types/cards.types";
+import * as notesTypes from "../types/notesTypes";
 
-export async function create(card: cardsTypes.Card) {
-  const result = await client.cards.create({
-    data: card,
+export async function insert(note: notesTypes.Note) {
+  const result = await client.notes.create({
+    data: note,
   });
   return result;
 }
 
 export async function findByTittleAndUserId(tittle: string, user_id: number) {
-  const result = await client.cards.findFirst({
+  const result = await client.notes.findFirst({
     where: {
       tittle,
       user_id,
@@ -19,7 +19,7 @@ export async function findByTittleAndUserId(tittle: string, user_id: number) {
 }
 
 export async function findById(id: number, user_id: number) {
-  const result = await client.cards.findFirst({
+  const result = await client.notes.findFirst({
     where: {
       id,
       user_id,
@@ -29,7 +29,7 @@ export async function findById(id: number, user_id: number) {
 }
 
 export async function findAll(user_id: number) {
-  const result = await client.cards.findMany({
+  const result = await client.notes.findMany({
     where: {
       user_id,
     },
@@ -38,7 +38,7 @@ export async function findAll(user_id: number) {
 }
 
 export async function deleteById(id: number) {
-  const result = await client.cards.delete({
+  const result = await client.notes.delete({
     where: {
       id,
     },

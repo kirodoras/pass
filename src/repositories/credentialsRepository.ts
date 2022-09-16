@@ -1,5 +1,5 @@
 import client from "../database";
-import * as credentialsTypes from "../types/credentials.types";
+import * as credentialsTypes from "../types/credentialsTypes";
 
 export async function create(credential: credentialsTypes.Credential) {
   const result = await client.credentials.create({

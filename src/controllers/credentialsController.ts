@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import * as credentialsService from "../services/credentials.services";
-import * as credentialsTypes from "../types/credentials.types";
+import * as credentialsService from "../services/credentialsServices";
+import * as credentialsTypes from "../types/credentialsTypes";
 
 export async function create(req: Request, res: Response) {
   const { url, url_user, url_password, tittle } = req.body;

@@ -1,9 +1,9 @@
 import { Router, Request, Response } from "express";
-import UsersRouter from "./users.router";
-import NotesRouter from "./notes.router";
-import WifisRouter from "./wifis.router";
-import CredentialsRouter from "./credentials.router";
-import CardsRouter from "./cards.router";
+import UsersRouter from "./usersRouter";
+import NotesRouter from "./notesRouter";
+import WifisRouter from "./wifisRouter";
+import CredentialsRouter from "./credentialsRouter";
+import CardsRouter from "./cardsRouter";
 
 const router = Router();
 router.get("/", (req: Request, res: Response) => {

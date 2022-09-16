@@ -1,8 +1,8 @@
 import { Router } from "express";
-import * as credentialsController from "../controllers/credentials.controller";
-import * as schemaValidator from "../middlewares/schemaValidator.middleware";
-import credentialsSchema from "../schemas/credentials.schema";
-import { tokenValidator } from "../middlewares/tokenValidator.middleware";
+import * as credentialsController from "../controllers/credentialsController";
+import * as schemaValidator from "../middlewares/schemaValidatorMiddleware";
+import credentialsSchema from "../schemas/credentialsSchema";
+import { tokenValidator } from "../middlewares/tokenValidatorMiddleware";
 const CredentialsRouter = Router();
 const PATH = "/credentials";
 

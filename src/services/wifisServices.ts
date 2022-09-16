@@ -1,6 +1,6 @@
-import * as wifisRepository from "../repositories/wifis.repository";
-import * as cryptrProvider from "../providers/cryptr.provider";
-import * as wifisTypes from "../types/wifis.types";
+import * as wifisRepository from "../repositories/wifisRepository";
+import * as cryptrProvider from "../providers/cryptrProvider";
+import * as wifisTypes from "../types/wifisTypes";
 
 export async function create(wifi: wifisTypes.Wifi) {
   const hash_password = cryptrProvider.encrypt(wifi.network_password);

@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
-import * as jwtProvider from "../providers/jwt.provider";
-import * as usersServices from "../services/users.services";
+import * as jwtProvider from "../providers/jwtProvider";
+import * as usersServices from "../services/usersServices";
 
 type Payload = {
   email: string;
